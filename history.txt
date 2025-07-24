@@ -1,0 +1,7 @@
+echo hello
+echo "Hello World"
+c pwd
+pwd
+cd..
+pwd
+cd ..

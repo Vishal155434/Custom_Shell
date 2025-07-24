@@ -1,2 +1,2 @@
 all:
-	g++ src/*.cpp -o myshell 
+	g++ src/main.cpp src/shell.cpp -Iinclude -o myshell -mconsole 
