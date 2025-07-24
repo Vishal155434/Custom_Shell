@@ -14,7 +14,7 @@
 void Shell::run(){
     while (true)
     {
-        displayPrompt();  //1. Show shell
+        displayPrompt(); //display prompt
 
         std::string input = getInput(); //2. Get user input 
 
@@ -27,7 +27,10 @@ void Shell::run(){
 
 // Print the shell prompt
 void Shell::displayPrompt(){
-    std::cout<< "MyShell$";
+    char buffer[MAX_PATH];
+    GetCurrentDirectoryA(MAX_PATH, buffer);
+    
+    std::cout<< "MyShell$"<<buffer<<std::endl;
 }
 
 // Get a full line of input from the user
@@ -59,7 +62,6 @@ void Shell::executeCommand(const std::string& input){
         iss >> path;
         char buffer[MAX_PATH];
         GetCurrentDirectoryA(MAX_PATH, buffer);
-        std::cout<<"We are at : "<< buffer<<std::endl;
         if (!SetCurrentDirectoryA(path.c_str())){
             std::cerr<<"cd failed \n";
         }
@@ -90,6 +92,7 @@ void Shell::executeCommand(const std::string& input){
     }
    
 }
+
 
 void Shell::loadHistory(){
     std::ifstream file("history.txt");

@@ -1,5 +1,5 @@
 #include "../include/shell.hpp"
-
+#include<iostream>
 int main(){
     
     //Create a Shell object and run it

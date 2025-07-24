@@ -5,3 +5,12 @@ pwd
 cd..
 pwd
 cd ..
+Vishal
+hello
+cd ..
+cd
+e
+cd ..
+vishal
+cd..
+cd ..
